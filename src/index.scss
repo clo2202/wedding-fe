@@ -1,0 +1,27 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+#root {
+  height: 100%;
+}
+
+body {
+  border: 40px solid transparent;
+  border-image: url(./assets/border2.png) 30 round;
+  min-height: 100vh;
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+    border: 0px 
+  }
+
+  #root {
+    height: 100%;
+    overflow: scroll;
+  }
+}

@@ -1,0 +1,63 @@
+h1 {
+  font-family: "Lobster", cursive;
+  margin: 15px;
+  padding: 5px;
+}
+
+.event {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .date {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    p {
+      margin: 0;
+    }
+
+    h2 {
+      margin: 0;
+    }
+
+    .time {
+      margin: 15px;
+      padding: 5px;
+      border-top: 1px solid black;
+      border-bottom: 1px solid black;
+      word-spacing: 1em;
+    }
+  }
+
+  .address {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+  }
+
+  button {
+    margin: 10px;
+    color: #265b6d;
+  }
+
+  .reception {
+    margin: 15px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .event {
+    width: 100%;
+  }
+
+  .reception {
+    font-size: 14px;
+  }
+}

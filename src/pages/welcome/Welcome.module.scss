@@ -1,0 +1,59 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center ;
+  overflow: hidden;
+  color: #265b6d;
+
+
+  .welcome {
+    width: 90%;
+    margin: auto;
+    color: #265b6d;
+    display: flex;
+    flex-direction: column;
+  }
+
+  h1 {
+    font-family: "Lobster", cursive;
+    margin: 2%;
+  }
+
+  p {
+    margin: 3%;
+  }
+
+  .icon {
+    margin: 15px;
+    width: 90%;
+    font-size: 3rem;
+  }
+
+  img {
+    max-width: 35%;
+  }
+
+  a {
+    color: #265b6d
+  }
+
+  a:hover {
+    color: #F3DE8A
+  }
+
+  .card {
+    margin: 2%;
+    border: 2px solid #F3DE8A;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+.container {
+    flex-direction: column;
+
+    img {
+        max-width: 90%;
+      }
+}
+}
