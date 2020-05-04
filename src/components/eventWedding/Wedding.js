@@ -21,7 +21,7 @@ const Wedding = ({ event }) => {
         </p>
       </div>
       <p className={styles.reception}>
-        *Reception guests - please arrive from 17:00
+        *Last orders at 11pm
       </p>
       <AddToCalendarDropdown event={event} buttonText={"Add to Calendar"} />
       <div className={styles.address}>

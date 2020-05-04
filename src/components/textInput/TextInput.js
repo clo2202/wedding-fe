@@ -1,11 +1,12 @@
 import React from 'react';
 import TextField from "@material-ui/core/TextField";
 
-const TextInput = ({setName, label}) => {
+const TextInput = ({setName, label, value}) => {
     return (
         <TextField
-          id="standard-basic"
+          required
           label={label}
+          value={value}
           onChange={e => setName(e.target.value)}
         />
     );

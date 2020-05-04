@@ -18,13 +18,13 @@ const RadioButtons = ({rsvpResponse, handleChange}) => {
       >
         <FormControlLabel
           value={true}
-          control={<Radio color="primary" />}
+          control={<Radio color="primary" required/>}
           label="Yes, I can come"
           labelPlacement="top"
         />
         <FormControlLabel
           value={false}
-          control={<Radio color="primary" />}
+          control={<Radio color="primary" required/>}
           label="Sorry, I can't make it"
           labelPlacement="top"
         />

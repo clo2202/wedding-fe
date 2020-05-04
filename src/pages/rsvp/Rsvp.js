@@ -1,12 +1,18 @@
 import React, { useState } from "react";
+import { Redirect } from "react-router-dom";
 import Button from "@material-ui/core/Button";
 import AddCircleOutlineOutlinedIcon from "@material-ui/icons/AddCircleOutlineOutlined";
 import * as styles from "./Rsvp.module.scss";
-import { TextInput, RadioButtons, RsvpDropdown } from "../../components/";
+import {
+  TextInput,
+  RadioButtons,
+  RsvpDropdown,
+  RsvpDialogue
+} from "../../components/";
 
 const Rsvp = () => {
-  const [rsvpResponse, setRsvpResponse] = useState(null);
   const [name, setName] = useState("");
+  const [rsvpResponse, setRsvpResponse] = useState(null);
   const [mealChoice, setMealChoice] = useState("");
 
   const [plusOneName, setPlusOneName] = useState("");
@@ -14,20 +20,33 @@ const Rsvp = () => {
 
   const [showPlusOne, setShowPlusOne] = useState(false);
 
+  const [dialogueOpen, setDialogueOpen] = useState(false);
+
+  const [redirect, setRedirect] = useState(false);
+
   const handleFormSubmit = e => {
     e.preventDefault();
-    console.log(
-      `Name: ${name}, RSVP: ${rsvpResponse}, Meal Choice: ${mealChoice}. Guest Name: ${plusOneName}, Guest Meal Choice: ${plusOneMealChoice}`
-    );
+    setDialogueOpen(true);
   };
 
   const handleChange = e => {
-    e.preventDefault();
     if (e.target.value === "true") {
       setRsvpResponse(true);
     } else {
       setRsvpResponse(false);
     }
+  };
+
+  const handleDialogueConfirm = () => {
+    console.log(
+      `Name: ${name}, RSVP: ${rsvpResponse}, Meal Choice: ${mealChoice}. Guest Name: ${plusOneName}, Guest Meal Choice: ${plusOneMealChoice}`
+    );
+    setDialogueOpen(false);
+    setRedirect(true);
+  };
+
+  const handleDialogueCancel = () => {
+    setDialogueOpen(false);
   };
 
   return (
@@ -38,12 +57,19 @@ const Rsvp = () => {
         wedding.
       </p>
       <form className={styles.form} onSubmit={handleFormSubmit}>
-        <TextInput setName={setName} label={"Full Name"}/>
+        <TextInput setName={setName} label={"Full Name"} value={name} />
         <RadioButtons rsvpResponse={rsvpResponse} handleChange={handleChange} />
-        <RsvpDropdown mealChoice={mealChoice} setMealChoice={setMealChoice} label={"Meal Preference"}/>
+        <RsvpDropdown
+          mealChoice={mealChoice}
+          setMealChoice={setMealChoice}
+          label={"Meal Preference"}
+        />
         {showPlusOne ? null : (
           <div className={styles.plus}>
-            <button className={styles.addGuest} onClick={() => setShowPlusOne(true)}>
+            <button
+              className={styles.addGuest}
+              onClick={() => setShowPlusOne(true)}
+            >
               <AddCircleOutlineOutlinedIcon />
             </button>
             <p>Add a Guest</p>
@@ -51,7 +77,11 @@ const Rsvp = () => {
         )}
         {showPlusOne && (
           <div className={styles.guestForm}>
-            <TextInput setName={setPlusOneName} label={"Guest's Full Name"}/>
+            <TextInput
+              setName={setPlusOneName}
+              label={"Guest's Full Name"}
+              value={plusOneName}
+            />
             <RsvpDropdown
               mealChoice={plusOneMealChoice}
               setMealChoice={setPlusOneMealChoice}
@@ -59,10 +89,31 @@ const Rsvp = () => {
             />
           </div>
         )}
-        <Button type="submit" variant="outlined" className={styles.submitButton}>
+        <Button
+          type="submit"
+          variant="outlined"
+          className={styles.submitButton}
+        >
           Submit
         </Button>
       </form>
+      <RsvpDialogue
+        open={dialogueOpen}
+        name={name}
+        rsvpResponse={rsvpResponse}
+        mealChoice={mealChoice}
+        plusOneName={plusOneName}
+        plusOneMealChoice={plusOneMealChoice}
+        handleDialogueConfirm={handleDialogueConfirm}
+        handleDialogueCancel={handleDialogueCancel}
+      />
+      {redirect && (
+        <Redirect
+          to={{
+            pathname: "/confirmation",
+          }}
+        />
+      )}
     </div>
   );
 };

@@ -1,0 +1,58 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: #265b6d;
+
+  .hotels {
+    width: 50%;
+    padding: 1rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .travel {
+    width: 50%;
+    padding: 1rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+
+    p {
+      margin-bottom: 5%;
+    }
+  }
+
+  h5 {
+    margin-bottom: 4%;
+    text-decoration: underline #d3e4d4;
+    text-underline-position: under;
+  }
+
+  h6 {
+    font-weight: bold;
+  }
+
+  p {
+    margin-bottom: 2%;
+  }
+
+  a {
+    color: inherit;
+    font-style: italic;
+    margin-bottom: 5%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .container {
+    flex-direction: column;
+
+    .hotels {
+        width: 100%;
+    }
+
+    .travel {
+        width: 100%;
+    }
+  }
+}
