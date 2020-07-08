@@ -10,9 +10,9 @@ const RsvpDialogue = ({
   open,
   name,
   rsvpResponse,
-  mealChoice,
+  dietaryRequirements,
   plusOneName,
-  plusOneMealChoice,
+  plusOneDietary,
   handleDialogueConfirm,
   handleDialogueCancel
 }) => {
@@ -26,13 +26,13 @@ const RsvpDialogue = ({
             <br />
             RSVP: {rsvpResponse ? "Yes" : "No"}
             <br />
-            Meal Preference: {mealChoice}
+            Dietary Requirements: {dietaryRequirements}
             <br />
             {plusOneName !== "" ? (
               <React.Fragment>
                 Guest Name: {plusOneName}
                 <br />
-                Guest Meal Preference: {plusOneMealChoice}
+                Guest Dietary Requirements: {plusOneDietary}
               </React.Fragment>
             ) : null}
           </DialogContentText>

@@ -1,7 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import Card from "@material-ui/core/Card";
-import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 import * as styles from "./Welcome.module.scss";
 import image from "../../assets/main-image.jpg";
 

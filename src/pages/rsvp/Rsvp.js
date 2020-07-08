@@ -6,17 +6,17 @@ import * as styles from "./Rsvp.module.scss";
 import {
   TextInput,
   RadioButtons,
-  RsvpDropdown,
   RsvpDialogue
 } from "../../components/";
 
 const Rsvp = () => {
   const [name, setName] = useState("");
   const [rsvpResponse, setRsvpResponse] = useState(null);
-  const [mealChoice, setMealChoice] = useState("");
+  const [dietaryRequirements, setDietaryRequirements] = useState("");
+  const [song, setSong] = useState("");
 
   const [plusOneName, setPlusOneName] = useState("");
-  const [plusOneMealChoice, setPlusOneMealChoice] = useState("");
+  const [plusOneDietary, setPlusOneDietary] = useState("");
 
   const [showPlusOne, setShowPlusOne] = useState(false);
 
@@ -39,7 +39,7 @@ const Rsvp = () => {
 
   const handleDialogueConfirm = () => {
     console.log(
-      `Name: ${name}, RSVP: ${rsvpResponse}, Meal Choice: ${mealChoice}. Guest Name: ${plusOneName}, Guest Meal Choice: ${plusOneMealChoice}`
+      `Name: ${name}, RSVP: ${rsvpResponse}, Dietary Requirements: ${dietaryRequirements}. Guest Name: ${plusOneName}, Guest Dietary: ${plusOneDietary}`
     );
     setDialogueOpen(false);
     setRedirect(true);
@@ -57,12 +57,23 @@ const Rsvp = () => {
         wedding.
       </p>
       <form className={styles.form} onSubmit={handleFormSubmit}>
-        <TextInput setName={setName} label={"Full Name"} value={name} />
+        <TextInput
+          handleTextChange={setName}
+          label={"Full Name"}
+          value={name}
+        />
         <RadioButtons rsvpResponse={rsvpResponse} handleChange={handleChange} />
-        <RsvpDropdown
-          mealChoice={mealChoice}
-          setMealChoice={setMealChoice}
-          label={"Meal Preference"}
+        <TextInput
+          handleTextChange={setDietaryRequirements}
+          label={"Any Dietary Requirements?"}
+          value={dietaryRequirements}
+          required={false}
+        />
+        <TextInput
+          handleTextChange={setSong}
+          label={"Song Suggestion"}
+          value={song}
+          required={false}
         />
         {showPlusOne ? null : (
           <div className={styles.plus}>
@@ -78,15 +89,16 @@ const Rsvp = () => {
         {showPlusOne && (
           <div className={styles.guestForm}>
             <TextInput
-              setName={setPlusOneName}
+              handleTextChange={setPlusOneName}
               label={"Guest's Full Name"}
               value={plusOneName}
             />
-            <RsvpDropdown
-              mealChoice={plusOneMealChoice}
-              setMealChoice={setPlusOneMealChoice}
-              label={"Guest's Meal Preference"}
-            />
+        <TextInput
+          handleTextChange={setPlusOneDietary}
+          label={"Any Dietary Requirements?"}
+          value={plusOneDietary}
+          required={false}
+        />
           </div>
         )}
         <Button
@@ -101,16 +113,16 @@ const Rsvp = () => {
         open={dialogueOpen}
         name={name}
         rsvpResponse={rsvpResponse}
-        mealChoice={mealChoice}
+        dietaryRequirements={dietaryRequirements}
         plusOneName={plusOneName}
-        plusOneMealChoice={plusOneMealChoice}
+        plusOneDietary={plusOneDietary}
         handleDialogueConfirm={handleDialogueConfirm}
         handleDialogueCancel={handleDialogueCancel}
       />
       {redirect && (
         <Redirect
           to={{
-            pathname: "/confirmation",
+            pathname: "/confirmation"
           }}
         />
       )}
