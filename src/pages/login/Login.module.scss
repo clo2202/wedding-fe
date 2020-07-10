@@ -4,10 +4,11 @@
   align-items: center;
   color: #265b6d;
   height: 80%;
-  padding: 1rem;
+  padding-top: 1rem;
 
   p {
-    margin: 10px;
+    margin-left: 2%;
+    margin-right: 2%;
     text-align: center;
   }
 
@@ -15,32 +16,11 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 50%;
+    width: 30%;
     margin: 2%;
     padding: 2%;
     border: 1px solid #f7f7f2;
     box-shadow: 0 1px 10px rgba(0, 0, 0, 0.19), 0 1px 1px rgba(0, 0, 0, 0.23);
-
-    .plus {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: center;
-      margin: 3%;
-
-      .addGuest {
-        background-color: inherit;
-        border: inherit;
-        color: #265b6d;
-      }
-    }
-
-    .guestForm {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        margin-top: 2%
-    }
 
     .submitButton {
       margin: 3%;
@@ -50,7 +30,16 @@
   }
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 1024px) {
+  .container {
+    .form {
+      width: 50%;
+    }
+  }
+}
+
+// Small devices (landscape phones, less than 768px)
+@media (max-width: 767.98px) {
   .container {
     .form {
       width: 90%;

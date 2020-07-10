@@ -3,6 +3,7 @@ export { default as TextInput } from './textInput/TextInput';
 export { default as RsvpDialogue } from './rsvpDialogue/RsvpDialogue';
 export { default as Navigation } from './navigation/Navigation';
 export { default as Wedding } from './eventWedding/Wedding';
+export { default as PrivateRoute } from './privateRoute/PrivateRoute';
 export { default as Map } from './map/Map';
 export { default as CustomButton } from './button/CustomButton';
 export { default as RadioButtons } from './radioButtons/RadioButtons';
