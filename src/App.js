@@ -33,8 +33,10 @@ function App() {
         localStorage.clear();
         setAuthTokens(null);
       } 
+    } else {
+      setAuthTokens(null)
     }
-  }, []);
+  }, [existingTokens]);
 
   const setTokens = data => {
     localStorage.setItem("tokens", JSON.stringify(data));

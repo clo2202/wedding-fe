@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Redirect } from "react-router-dom";
 import * as styles from "./Login.module.scss";
 import { TextInput } from "../../components";
-import { Button } from "@material-ui/core";
+import { Button, CircularProgress } from "@material-ui/core";
 import { useAuth } from "../../context/auth";
 import * as api from "../../utils/api"
 
@@ -53,7 +53,7 @@ const Login = (props) => {
           variant="outlined"
           className={styles.submitButton}
         >
-          {isLoading ? "Loading..." : "Submit"}
+          {isLoading ? <CircularProgress size={28}/> : "Submit"}
         </Button>
       </form>
     </div>
