@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Navigation, Header, PrivateRoute } from "./components";
 import { Welcome, Rsvp, Info, Event, Gallery, Login } from "./pages";
 import { AuthContext } from "./context/auth";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import jwtDecode from "jwt-decode";
 import { ThemeProvider } from "@material-ui/styles";
 import { createMuiTheme } from "@material-ui/core/styles";
 
@@ -24,14 +25,25 @@ function App() {
   const existingTokens = JSON.parse(localStorage.getItem("tokens"));
   const [authTokens, setAuthTokens] = useState(existingTokens);
 
+  useEffect(() => {
+    if (existingTokens) {
+      const { exp } = jwtDecode(existingTokens);
+      const current_time = Date.now() / 1000;
+      if (exp < current_time) {
+        localStorage.clear();
+        setAuthTokens(null);
+      } 
+    }
+  }, []);
+
   const setTokens = data => {
     localStorage.setItem("tokens", JSON.stringify(data));
-    setAuthTokens(data)
-  }
+    setAuthTokens(data);
+  };
 
   return (
     <ThemeProvider theme={theme}>
-      <AuthContext.Provider value={{authTokens, setAuthTokens: setTokens}}>
+      <AuthContext.Provider value={{ authTokens, setAuthTokens: setTokens }}>
         <Router>
           <Header />
           <Navigation />
