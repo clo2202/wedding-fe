@@ -20,7 +20,7 @@ const Navigation = () => {
             </Nav>
             <Nav>
               <Link to={"/event"} className="nav-link" onClick={() => setExpanded(false)}>
-                Event
+                Event Info
               </Link>
             </Nav>
             <Nav>
@@ -30,7 +30,7 @@ const Navigation = () => {
             </Nav>
             <Nav>
               <Link to={"/info"} className="nav-link" onClick={() => setExpanded(false)}>
-                Info
+                Hotels &amp; Travel
               </Link>
             </Nav>
             <Nav>

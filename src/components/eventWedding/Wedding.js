@@ -15,24 +15,22 @@ const Wedding = ({ event }) => {
       <div className={styles.date}>
         <p>SAT</p>
         <h2>26 JUNE</h2>
-        <p>2020</p>
+        <p>2021</p>
         <p className={styles.time}>
           <b>12:00 to 00:00*</b>
         </p>
       </div>
-      <p className={styles.reception}>
-        *Last orders at 11pm
-      </p>
-      <AddToCalendarDropdown event={event} buttonText={"Add to Calendar"} />
+      <p className={styles.reception}>*Last orders at 11pm</p>
+      <Link to="/rsvp" style={{ textDecoration: "none" }}>
+        <Button variant="outlined">RSVP</Button>
+      </Link>
       <div className={styles.address}>
-        <span>Thwaite Watermills</span>
+        <span>Thwaite Watermill</span>
         <span>Thwaite Lane</span>
         <span>Leeds</span>
         <span>LS10 1RP</span>
       </div>
-      <Link to="/rsvp" style={{ textDecoration: "none" }}>
-        <Button variant="outlined">RSVP</Button>
-      </Link>
+      <AddToCalendarDropdown event={event} buttonText={"Add to Calendar"} />
     </section>
   );
 };

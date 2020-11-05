@@ -3,12 +3,14 @@
   flex-direction: row;
   justify-content: space-between;
   color: #265b6d;
+  height: 85%;
 
   .details {
     width: 50%;
     padding: 5px;
     display: flex;
     flex-direction: column;
+    justify-content: center;
 
     h5,
     p {
