@@ -3,25 +3,17 @@ import { Redirect } from "react-router-dom";
 import Button from "@material-ui/core/Button";
 import AddCircleOutlineOutlinedIcon from "@material-ui/icons/AddCircleOutlineOutlined";
 import * as styles from "./Rsvp.module.scss";
-import {
-  TextInput,
-  RadioButtons,
-  RsvpDialogue
-} from "../../components/";
+import { TextInput, RadioButtons, RsvpDialogue } from "../../components/";
 
 const Rsvp = () => {
   const [name, setName] = useState("");
   const [rsvpResponse, setRsvpResponse] = useState(null);
   const [dietaryRequirements, setDietaryRequirements] = useState("");
   const [song, setSong] = useState("");
-
   const [plusOneName, setPlusOneName] = useState("");
   const [plusOneDietary, setPlusOneDietary] = useState("");
-
   const [showPlusOne, setShowPlusOne] = useState(false);
-
   const [dialogueOpen, setDialogueOpen] = useState(false);
-
   const [redirect, setRedirect] = useState(false);
 
   const handleFormSubmit = e => {
@@ -47,6 +39,12 @@ const Rsvp = () => {
 
   const handleDialogueCancel = () => {
     setDialogueOpen(false);
+  };
+
+  const handleCancelGuest = () => {
+    setShowPlusOne(false);
+    setPlusOneName("");
+    setPlusOneDietary("");
   };
 
   return (
@@ -82,8 +80,8 @@ const Rsvp = () => {
               onClick={() => setShowPlusOne(true)}
             >
               <AddCircleOutlineOutlinedIcon />
+              <p>Add a Guest</p>
             </button>
-            <p>Add a Guest</p>
           </div>
         )}
         {showPlusOne && (
@@ -93,12 +91,18 @@ const Rsvp = () => {
               label={"Guest's Full Name"}
               value={plusOneName}
             />
-        <TextInput
-          handleTextChange={setPlusOneDietary}
-          label={"Any Dietary Requirements?"}
-          value={plusOneDietary}
-          required={false}
-        />
+            <TextInput
+              handleTextChange={setPlusOneDietary}
+              label={"Any Dietary Requirements?"}
+              value={plusOneDietary}
+              required={false}
+            />
+            <div className={styles.plus}>
+              <button className={styles.addGuest} onClick={handleCancelGuest}>
+                <AddCircleOutlineOutlinedIcon />
+                <p>Remove Guest</p>
+              </button>
+            </div>
           </div>
         )}
         <Button

@@ -16,18 +16,31 @@ const Event = () => {
     <div className={styles.container}>
       <Wedding event={weddingCalendarEvent} />
       <section className={styles.details}>
-        <h5>Child Free Wedding</h5>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla tortor mauris, dapibus quis condimentum nec, vestibulum vel tellus. Aliquam mattis metus sapien, id ornare lectus varius ut. Quisque eleifend urna at convallis malesuada.</p>
+        <h5>The Ceremony</h5>
+        <p>
+          Due to a registrar misshap, we will officially be getting married on
+          Friday June 25th, the day before the big party. We do not expect any
+          of our guests to take extra time off for the 'official' ceremony, but
+          if you're in the Leeds area on Friday afternoon you're more than
+          welcome to come along. Message one of us for more details.
+          <br />
+          <br />
+          We'll be re-enacting the I do's on Saturday so nobody misses out.
+        </p>
         <h5>Dress Code</h5>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla tortor mauris, dapibus quis condimentum nec, vestibulum vel tellus.</p>
+        <p>
+          Whatever you like. You can come suited and booted or you can wear your
+          pjs, we don't mind, as long as you feel comfortable. The venue is an
+          old mill with a cobbled courtyard and a marquee on a lawn (consider
+          that a warning for anyone planning to wear stilettos).
+        </p>
         <h5>Gifts</h5>
         <p>
           Your attendance is the biggest gift you can give us, and so we do not
           expect any more than that on our wedding day. However, for those of
-          you who do wish to give us a gift we have a honeymoon fund that you
-          can contribute to. Please find any information on this below,
-          alternatively we will have a box on the day for any Wedding cards you
-          might like to give us.
+          you who do wish to give us a gift we will be creating a honeymoon fund
+          where you can contribute to our dream holiday, alternatively we will
+          have a box on the day for any Wedding cards you might like to give us.
         </p>
       </section>
     </div>

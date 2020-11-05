@@ -6,7 +6,7 @@ import image from "../../assets/main-image.jpg";
 const Welcome = () => {
   return (
     <div className={styles.container}>
-      <section>
+      <section className={styles.details}>
         <Card className={styles.welcome}>
           <div className={styles.card}>
             <h1>Welcome</h1>
@@ -33,7 +33,7 @@ const Welcome = () => {
           </div>
         </Card>
       </section>
-      <img src={image} alt="Chloe & Joe" />
+        <img src={image} alt="Chloe & Joe" />
     </div>
   );
 };
