@@ -13,7 +13,7 @@ const Welcome = () => {
             <p>
               2020 has been a strange old year, fingers and toes crossed that
               2021 will bring some sense of normality, and that we can celebrate
-              our wedding with our loved ones. <br />
+              our wedding with all our loved ones. <br />
               <br />
               This site should contain all the info you need, we've tried to put
               as much as we can in one place. If you think something is missing

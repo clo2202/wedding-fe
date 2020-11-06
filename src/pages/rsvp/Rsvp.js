@@ -4,6 +4,7 @@ import Button from "@material-ui/core/Button";
 import AddCircleOutlineOutlinedIcon from "@material-ui/icons/AddCircleOutlineOutlined";
 import * as styles from "./Rsvp.module.scss";
 import { TextInput, RadioButtons, RsvpDialogue } from "../../components/";
+import { Card } from "@material-ui/core";
 
 const Rsvp = () => {
   const [name, setName] = useState("");
@@ -54,65 +55,70 @@ const Rsvp = () => {
         Please complete the form below to let us know if you can make it to the
         wedding.
       </p>
-      <form className={styles.form} onSubmit={handleFormSubmit}>
-        <TextInput
-          handleTextChange={setName}
-          label={"Full Name"}
-          value={name}
-        />
-        <RadioButtons rsvpResponse={rsvpResponse} handleChange={handleChange} />
-        <TextInput
-          handleTextChange={setDietaryRequirements}
-          label={"Any Dietary Requirements?"}
-          value={dietaryRequirements}
-          required={false}
-        />
-        <TextInput
-          handleTextChange={setSong}
-          label={"Song Suggestion"}
-          value={song}
-          required={false}
-        />
-        {showPlusOne ? null : (
-          <div className={styles.plus}>
-            <button
-              className={styles.addGuest}
-              onClick={() => setShowPlusOne(true)}
-            >
-              <AddCircleOutlineOutlinedIcon />
-              <p>Add a Guest</p>
-            </button>
-          </div>
-        )}
-        {showPlusOne && (
-          <div className={styles.guestForm}>
-            <TextInput
-              handleTextChange={setPlusOneName}
-              label={"Guest's Full Name"}
-              value={plusOneName}
-            />
-            <TextInput
-              handleTextChange={setPlusOneDietary}
-              label={"Any Dietary Requirements?"}
-              value={plusOneDietary}
-              required={false}
-            />
+      <Card className={styles.formContainer}>
+        <form className={styles.form} onSubmit={handleFormSubmit}>
+          <TextInput
+            handleTextChange={setName}
+            label={"Full Name"}
+            value={name}
+          />
+          <RadioButtons
+            rsvpResponse={rsvpResponse}
+            handleChange={handleChange}
+          />
+          <TextInput
+            handleTextChange={setDietaryRequirements}
+            label={"Any Dietary Requirements?"}
+            value={dietaryRequirements}
+            required={false}
+          />
+          <TextInput
+            handleTextChange={setSong}
+            label={"Song Suggestion"}
+            value={song}
+            required={false}
+          />
+          {showPlusOne ? null : (
             <div className={styles.plus}>
-              <button className={styles.addGuest} onClick={handleCancelGuest}>
+              <button
+                className={styles.addGuest}
+                onClick={() => setShowPlusOne(true)}
+              >
                 <AddCircleOutlineOutlinedIcon />
-                <p>Remove Guest</p>
+                <p>Add a Guest</p>
               </button>
             </div>
-          </div>
-        )}
-        <Button
-          type="submit"
-          variant="outlined"
-          className={styles.submitButton}
-        >
-          Submit
-        </Button>
-      </form>
+          )}
+          {showPlusOne && (
+            <div className={styles.guestForm}>
+              <TextInput
+                handleTextChange={setPlusOneName}
+                label={"Guest's Full Name"}
+                value={plusOneName}
+              />
+              <TextInput
+                handleTextChange={setPlusOneDietary}
+                label={"Any Dietary Requirements?"}
+                value={plusOneDietary}
+                required={false}
+              />
+              <div className={styles.plus}>
+                <button className={styles.addGuest} onClick={handleCancelGuest}>
+                  <AddCircleOutlineOutlinedIcon />
+                  <p>Remove Guest</p>
+                </button>
+              </div>
+            </div>
+          )}
+          <Button
+            type="submit"
+            variant="outlined"
+            className={styles.submitButton}
+          >
+            Submit
+          </Button>
+        </form>
+      </Card>
       <RsvpDialogue
         open={dialogueOpen}
         name={name}

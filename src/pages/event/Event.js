@@ -25,7 +25,7 @@ const Event = () => {
           welcome to come along. Message one of us for more details.
           <br />
           <br />
-          We'll be re-enacting the I do's on Saturday so nobody misses out.
+          We'll be re-enacting the 'I do's' on Saturday so nobody misses out.
         </p>
         <h5>Dress Code</h5>
         <p>
@@ -37,10 +37,10 @@ const Event = () => {
         <h5>Gifts</h5>
         <p>
           Your attendance is the biggest gift you can give us, and so we do not
-          expect any more than that on our wedding day. However, for those of
-          you who do wish to give us a gift we will be creating a honeymoon fund
-          where you can contribute to our dream holiday, alternatively we will
-          have a box on the day for any Wedding cards you might like to give us.
+          expect any more than that on our wedding day. But should you wish to
+          buy us something, we’d greatly appreciate a contribution towards our
+          dream honeymoon, alternatively we will have a box on the day for any
+          Wedding cards/gifts you might like to give us.
         </p>
       </section>
     </div>

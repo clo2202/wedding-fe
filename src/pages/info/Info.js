@@ -17,7 +17,7 @@ const Info = () => {
           rating={4.1}
           starDimension="20px"
           starSpacing="5px"
-          starRatedColor="#F3DE8A"
+          starRatedColor="#ffde59"
         />
         <a
           href="https://www.ihg.com/holidayinnexpress/hotels/gb/en/leeds/leecd/hoteldetail"
@@ -35,7 +35,7 @@ const Info = () => {
           rating={4.1}
           starDimension="20px"
           starSpacing="5px"
-          starRatedColor="#F3DE8A"
+          starRatedColor="#ffde59"
         />
         <a
           href="https://www.jurysinns.com/hotels/leeds"
@@ -53,7 +53,7 @@ const Info = () => {
           rating={4.2}
           starDimension="20px"
           starSpacing="5px"
-          starRatedColor="#F3DE8A"
+          starRatedColor="#ffde59"
         />
         <a
           href="https://www.marriott.com/hotels/travel/lbadt-leeds-marriott-hotel/"
