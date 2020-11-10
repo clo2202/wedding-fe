@@ -1,10 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import AddToCalendarHOC from "react-add-to-calendar-hoc";
-import * as styles from "./Wedding.module.scss";
+import { Button } from "@material-ui/core";
+
 import CustomButton from "../button/CustomButton";
 import CustomDropdown from "../dropdown/CustomDropdown";
-import { Button } from "@material-ui/core";
+
+import * as styles from "./Wedding.module.scss";
 
 const AddToCalendarDropdown = AddToCalendarHOC(CustomButton, CustomDropdown);
 

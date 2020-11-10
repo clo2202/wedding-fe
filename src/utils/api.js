@@ -17,3 +17,8 @@ export const checkLogin = async password => {
       return err.response.data 
   }
 };
+
+export const submitRsvp = async (response) => {
+  const { data } = await axios.post(`${dbUrl}/rsvp`, response)
+  return data
+}

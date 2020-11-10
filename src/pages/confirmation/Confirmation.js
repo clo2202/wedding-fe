@@ -1,6 +1,8 @@
 import React from "react";
 import { Redirect } from "react-router-dom";
+
 import image from "../../assets/wedding_logo.png";
+
 import * as styles from "./Confirmation.module.scss";
 
 const Confirmation = props => {

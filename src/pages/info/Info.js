@@ -1,7 +1,9 @@
 import React from "react";
-import * as styles from "./Info.module.scss";
 import StarRatings from "react-star-ratings";
+
 import { Map } from "../../components";
+
+import * as styles from "./Info.module.scss";
 
 const Info = () => {
   return (

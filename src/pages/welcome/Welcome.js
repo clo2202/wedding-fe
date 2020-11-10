@@ -1,7 +1,9 @@
 import React from "react";
 import Card from "@material-ui/core/Card";
-import * as styles from "./Welcome.module.scss";
+
 import image from "../../assets/wedding_logo.png";
+
+import * as styles from "./Welcome.module.scss";
 
 const Welcome = () => {
   return (

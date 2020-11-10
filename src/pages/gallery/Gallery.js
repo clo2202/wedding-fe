@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import GridList from "@material-ui/core/GridList";
-import GridListTile from "@material-ui/core/GridListTile";
-import * as styles from "./Gallery.module.scss";
+import { GridList, GridListTile } from "@material-ui/core";
+
 import * as api from "../../utils/api";
+
+import * as styles from "./Gallery.module.scss";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -35,7 +36,8 @@ const Gallery = () => {
   return (
     <div className={styles.container}>
       <p>
-        Use the hashtag #jcwedding2606 on your Instagram posts to add your photo to our gallery below!
+        Use the hashtag #jcwedding2606 on your Instagram posts to add your photo
+        to our gallery below!
       </p>
       <div className={classes.root}>
         <GridList cellHeight={360} cols={4} className={classes.gridList}>

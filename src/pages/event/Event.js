@@ -1,6 +1,8 @@
 import React from "react";
-import * as styles from "./Event.module.scss";
+
 import { Wedding } from "../../components";
+
+import * as styles from "./Event.module.scss";
 
 const weddingCalendarEvent = {
   description: "Joe and Chloe are getting married!",
@@ -8,7 +10,7 @@ const weddingCalendarEvent = {
   endDatetime: "20210627T000000",
   location: "Thwaite Watermill, Leeds",
   startDatetime: "20210626T120000",
-  title: 'Joe and Chloe"s Wedding'
+  title: "Joe and Chloe's Wedding"
 };
 
 const Event = () => {

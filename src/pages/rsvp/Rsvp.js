@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 import { Redirect } from "react-router-dom";
-import Button from "@material-ui/core/Button";
+import { Card, Button } from "@material-ui/core";
 import AddCircleOutlineOutlinedIcon from "@material-ui/icons/AddCircleOutlineOutlined";
-import * as styles from "./Rsvp.module.scss";
+
 import { TextInput, RadioButtons, RsvpDialogue } from "../../components/";
-import { Card } from "@material-ui/core";
+
+import * as api from "../../utils/api";
+
+import * as styles from "./Rsvp.module.scss";
 
 const Rsvp = () => {
   const [name, setName] = useState("");
@@ -31,9 +34,15 @@ const Rsvp = () => {
   };
 
   const handleDialogueConfirm = () => {
-    console.log(
-      `Name: ${name}, RSVP: ${rsvpResponse}, Dietary Requirements: ${dietaryRequirements}. Guest Name: ${plusOneName}, Guest Dietary: ${plusOneDietary}`
-    );
+    const response = {
+      name,
+      rsvp: rsvpResponse,
+      dietary_req: dietaryRequirements,
+      song_suggestion: song,
+      plus_one_name: plusOneName,
+      plus_one_dietary_req: plusOneDietary
+    }
+    api.submitRsvp(response)
     setDialogueOpen(false);
     setRedirect(true);
   };

@@ -1,10 +1,13 @@
 import React from "react";
-import List from "@material-ui/core/List";
-import ListItem from "@material-ui/core/ListItem";
-import ListItemText from "@material-ui/core/ListItemText";
-import DialogTitle from "@material-ui/core/DialogTitle";
-import Dialog from "@material-ui/core/Dialog";
-import Divider from "@material-ui/core/Divider";
+import {
+  List,
+  ListItem,
+  ListItemText,
+  Dialog,
+  DialogTitle,
+  Divider
+} from "@material-ui/core";
+
 import * as styles from "./CustomDropdown.module.scss";
 
 const CustomDropdown = ({ children, isOpen, onRequestClose }) => {
@@ -15,11 +18,11 @@ const CustomDropdown = ({ children, isOpen, onRequestClose }) => {
       </DialogTitle>
       <List>
         {children.map(item => (
-          <React.Fragment>
+          <React.Fragment key={item}>
             <ListItem key={item} onClick={onRequestClose}>
-              <ListItemText primary={item} className={styles.item}/>
+              <ListItemText primary={item} className={styles.item} />
             </ListItem>
-            <Divider variant="middle"/>
+            <Divider variant="middle" />
           </React.Fragment>
         ))}
       </List>

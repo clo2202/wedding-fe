@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { Redirect } from "react-router-dom";
-import * as styles from "./Login.module.scss";
-import { TextInput } from "../../components";
 import { Button, CircularProgress } from "@material-ui/core";
+
+import { TextInput } from "../../components";
 import { useAuth } from "../../context/auth";
 import * as api from "../../utils/api"
+
+import * as styles from "./Login.module.scss";
 
 const Login = (props) => {
   const [isLoggedIn, setLoggedIn] = useState(false);
