@@ -132,7 +132,8 @@ const Rsvp = () => {
       {redirect && (
         <Redirect
           to={{
-            pathname: "/confirmation"
+            pathname: "/confirmation",
+            state: { rsvpResponse }
           }}
         />
       )}

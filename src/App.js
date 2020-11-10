@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Navigation, Header, PrivateRoute } from "./components";
-import { Welcome, Rsvp, Info, Event, Gallery, Login } from "./pages";
+import { Welcome, Rsvp, Info, Event, Gallery, Login, Confirmation } from "./pages";
 import { AuthContext } from "./context/auth";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import jwtDecode from "jwt-decode";
@@ -55,6 +55,7 @@ function App() {
             <PrivateRoute path="/event" component={Event} />
             <PrivateRoute path="/rsvp" component={Rsvp} />
             <PrivateRoute path="/info" component={Info} />
+            <PrivateRoute path="/confirmation" component={Confirmation} />
             <PrivateRoute path="/gallery" component={Gallery} />
           </Switch>
         </Router>

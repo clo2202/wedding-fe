@@ -1,0 +1,12 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #265b6d;
+  padding-top: 2rem;
+
+  img {
+    max-width: 20%;
+  }
+}
