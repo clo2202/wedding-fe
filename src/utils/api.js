@@ -1,10 +1,15 @@
 import axios from "axios";
 
 const InstaUrl =
-  "https://www.instagram.com/explore/tags/notsponsoredbyryanair/?__a=1";
+  "https://www.instagram.com/explore/tags/jcwedding2606/?__a=1";
 const dbUrl = `https://jdcw-wedding.herokuapp.com/api`;
 
 export const getPhotos = async () => {
+  const { data } = await axios.get(`${dbUrl}/photos`);
+  return data.photos
+};
+
+export const getInstaPhotos = async () => {
   const { data } = await axios.get(InstaUrl);
   return data.graphql.hashtag["edge_hashtag_to_media"].edges;
 };

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { makeStyles } from "@material-ui/core/styles";
 import { GridList, GridListTile } from "@material-ui/core";
+import { useTheme, makeStyles } from "@material-ui/core/styles";
+import useMediaQuery from "@material-ui/core/useMediaQuery";
 
 import * as api from "../../utils/api";
 
@@ -21,32 +22,41 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const Gallery = () => {
+  const theme = useTheme();
   const classes = useStyles();
-  const [photos, setPhotos] = useState([]);
+  const isDesktop = useMediaQuery(theme.breakpoints.up("sm"));
+  // const [instaPhotos, setInstaPhotos] = useState([]);
+  const [photoUrls, setPhotosUrls] = useState([]);
 
   useEffect(() => {
     fetchPhotos();
+    // fetchInstaPhotos();
   }, []);
 
   const fetchPhotos = async () => {
     const photos = await api.getPhotos();
-    setPhotos(photos);
+    setPhotosUrls(photos);
   };
+
+  // const fetchInstaPhotos = async () => {
+  //   const photos = await api.getInstaPhotos();
+  //   setInstaPhotos(photos);
+  // };
 
   return (
     <div className={styles.container}>
+      <h1>Gallery</h1>
       <p>
-        Use the hashtag #jcwedding2606 on your Instagram posts to add your photo
-        to our gallery below!
+        Use the hashtag <strong>#jcwedding2606</strong> on your Instagram posts
+        and your photos will be added to the gallery below. to our gallery
+        below.
       </p>
+      <p>Until then, here are some photos of us from over the years.</p>
       <div className={classes.root}>
-        <GridList cellHeight={360} cols={4} className={classes.gridList}>
-          {photos.map((photo, index) => (
+        <GridList cellHeight={460} cols={isDesktop ? 4 : 1} >
+          {photoUrls.map((photo, index) => (
             <GridListTile key={index}>
-              <img
-                src={photo.node["thumbnail_src"]}
-                alt={photo.node["accessibility_caption"]}
-              />
+              <img src={photo.photo_url} alt="chloe & joe" />
             </GridListTile>
           ))}
         </GridList>
