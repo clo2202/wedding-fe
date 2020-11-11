@@ -48,12 +48,11 @@ const Gallery = () => {
       <h1>Gallery</h1>
       <p>
         Use the hashtag <strong>#jcwedding2606</strong> on your Instagram posts
-        and your photos will be added to the gallery below. to our gallery
-        below.
+        and your photos will be added to the gallery below.
       </p>
       <p>Until then, here are some photos of us from over the years.</p>
       <div className={classes.root}>
-        <GridList cellHeight={460} cols={isDesktop ? 4 : 1} >
+        <GridList cellHeight={360} cols={isDesktop ? 4 : 1} className={classes.gridList}>
           {photoUrls.map((photo, index) => (
             <GridListTile key={index}>
               <img src={photo.photo_url} alt="chloe & joe" />

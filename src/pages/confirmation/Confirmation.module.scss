@@ -6,7 +6,19 @@
   color: #265b6d;
   padding-top: 2rem;
 
+  p {
+    text-align: center;
+  }
+
   img {
     max-width: 20%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .container {
+    img {
+      max-width: 80%;
+    }
   }
 }
