@@ -48,7 +48,7 @@ const Login = (props) => {
           label="Wedding Code"
           value={password}
           error={isError}
-          helperText="The code provided was incorrect!"
+          helperText="The code provided was incorrect. Please try again."
         />
         <Button
           type="submit"

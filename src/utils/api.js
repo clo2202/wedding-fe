@@ -5,8 +5,12 @@ const InstaUrl =
 const dbUrl = `https://jdcw-wedding.herokuapp.com/api`;
 
 export const getPhotos = async () => {
-  const { data } = await axios.get(`${dbUrl}/photos`);
-  return data.photos
+  try {
+    const { data } = await axios.get(`${dbUrl}/photos`);
+    return data.photos
+  } catch (err) {
+    return err.response.data
+  }
 };
 
 export const getInstaPhotos = async () => {
