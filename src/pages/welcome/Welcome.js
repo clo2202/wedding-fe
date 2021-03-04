@@ -13,9 +13,11 @@ const Welcome = () => {
           <div className={styles.card}>
             <h1>Welcome</h1>
             <p>
-              2020 has been a strange old year, fingers and toes crossed that
-              2021 will bring some sense of normality, and that we can celebrate
-              our wedding with all our loved ones. <br />
+              At the moment we're cracking on with our plans to get married on{" "}
+              <b>Saturday 26th June 2021</b>. We have everything crossed that
+              the restrictions will be lifted in time. However, if for any
+              reason the plans change we'll let guests know ASAP.
+              <br />
               <br />
               This site should contain all the info you need, we've tried to put
               as much as we can in one place. If you think something is missing
@@ -35,7 +37,7 @@ const Welcome = () => {
           </div>
         </Card>
       </section>
-        <img src={image} alt="Chloe & Joe" />
+      <img src={image} alt="Chloe & Joe" />
     </div>
   );
 };

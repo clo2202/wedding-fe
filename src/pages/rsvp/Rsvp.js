@@ -62,7 +62,7 @@ const Rsvp = () => {
       <h1>RSVP</h1>
       <p>
         Please complete the form below to let us know if you can make it to the
-        wedding.
+        wedding on <b>Saturday 26th June</b>.
       </p>
       <Card className={styles.formContainer}>
         <form className={styles.form} onSubmit={handleFormSubmit}>

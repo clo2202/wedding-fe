@@ -20,14 +20,11 @@ const Event = () => {
       <section className={styles.details}>
         <h5>The Ceremony</h5>
         <p>
-          Due to a registrar misshap, we will officially be getting married on
-          Friday June 25th, the day before the big party. We do not expect any
-          of our guests to take extra time off for the 'official' ceremony, but
-          if you're in the Leeds area on Friday afternoon you're more than
-          welcome to come along. Message one of us for more details.
+          Due to a registrar misshap, we will "officially" be getting married on
+          Friday June 25th, the day before the big party. 
           <br />
           <br />
-          We'll be re-enacting the 'I do's' on Saturday so nobody misses out.
+          But we'll be re-enacting the "I dos" on Saturday so nobody misses out.
         </p>
         <h5>Dress Code</h5>
         <p>
