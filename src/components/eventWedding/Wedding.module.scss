@@ -18,7 +18,7 @@ h1 {
     align-items: center;
 
     p {
-      margin: 0;
+      margin-bottom: 0;
     }
 
     h2 {
@@ -31,6 +31,25 @@ h1 {
       border-top: 2px solid #f5910e;
       border-bottom: 2px solid #f5910e;
       word-spacing: 1em;
+    }
+
+    .eveningTime {
+      margin: 15px;
+      padding: 5px;
+      border-top: 2px solid #f5910e;
+      border-bottom: 2px solid #f5910e;
+      word-spacing: 1em;
+    }
+
+    .reception {
+      margin: 2%;
+      font-size: 12px;
+      text-align: center;
+    }
+  
+    .wedding {
+      margin-top: 5%;
+      font-size: 12px;
     }
   }
 
@@ -45,11 +64,6 @@ h1 {
   button {
     margin: 10px;
     color: #265b6d;
-  }
-
-  .reception {
-    margin: 2%;
-    font-size: 12px;
   }
 }
 

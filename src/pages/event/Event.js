@@ -5,7 +5,8 @@ import { Wedding } from "../../components";
 import * as styles from "./Event.module.scss";
 
 const weddingCalendarEvent = {
-  description: "Joe and Chloe are getting married!",
+  description:
+    "Joe and Chloe are getting married! Evening guests, please arrive from 6pm",
   duration: "12",
   endDatetime: "20210627T000000",
   location: "Thwaite Watermill, Leeds",
@@ -21,7 +22,7 @@ const Event = () => {
         <h5>The Ceremony</h5>
         <p>
           Due to a registrar misshap, we will "officially" be getting married on
-          Friday June 25th, the day before the big party. 
+          Friday June 25th, the day before the big party.
           <br />
           <br />
           But we'll be re-enacting the "I dos" on Saturday so nobody misses out.

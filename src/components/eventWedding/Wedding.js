@@ -18,8 +18,13 @@ const Wedding = ({ event }) => {
         <p>SAT</p>
         <h2>26 JUNE</h2>
         <p>2021</p>
+        <p className={styles.wedding}>Ceremony &amp; lunch</p>
         <p className={styles.time}>
-          <b>12:00 to 00:00*</b>
+          <b>12:00 to 18:00</b>
+        </p>
+        <p className={styles.reception}>Evening reception, dinner &amp; dancing</p>
+        <p className={styles.eveningTime}>
+          <b>18:00 to 00:00*</b>
         </p>
       </div>
       <p className={styles.reception}>*Last orders at 11pm</p>
